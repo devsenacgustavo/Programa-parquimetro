@@ -16,7 +16,7 @@ header {
   background: #003366;
   color: white;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 18px 60px;
 }
@@ -24,17 +24,6 @@ header {
 .logo {
   font-size: 24px;
   font-weight: 700;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 25px;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #ffc107;
 }
 
 main {

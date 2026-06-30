@@ -27,9 +27,20 @@ function calcular() {
   }
 
   const valorDigitado = campoValor.value.trim();
-  const valor = Number.parseFloat(valorDigitado);
+  const valorValido = /^\d+([.,]\d{1,2})?$/.test(valorDigitado);
 
-  if (!valorDigitado || Number.isNaN(valor) || valor <= 0) {
+  if (!valorDigitado || !valorValido) {
+    mostrarMensagem(
+      "erro",
+      "Valor inválido",
+      "Informe um valor numérico maior que zero.",
+    );
+    return;
+  }
+
+  const valor = Number(valorDigitado.replace(",", "."));
+
+  if (!Number.isFinite(valor) || valor <= 0) {
     mostrarMensagem(
       "erro",
       "Valor inválido",
